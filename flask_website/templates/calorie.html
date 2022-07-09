@@ -1,0 +1,106 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<title>Calories Burnt Predictor</title>
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+<header class="text-gray-600 body-font">
+<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+<a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-blue-500 rounded-full" viewBox="0 0 24 24">
+<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+</svg>
+<span class="ml-3 text-xl">Calories Burnt Predictor</span>
+</a>
+<nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+<a class="mr-5 hover:text-gray-900" href="{{ url_for('home') }}">Back Home</a>
+<a class="mr-5 hover:text-gray-900" href="{{ url_for('resetpassword') }}">Reset Password</a>
+</nav>
+</div>
+</header>
+<form action="/calorie" method="POST">
+	<section class="text-gray-600 body-font relative">
+	  <div class="container px-5 py-24 mx-auto">
+		<div class="flex flex-col text-center w-full mb-12">
+		  <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Fill in the details</h1>
+		</div>
+		<div class="lg:w-1/2 md:w-2/3 mx-auto">
+		  <div class="flex flex-wrap -m-2">
+			<div class="p-2 w-full">
+			  <div class="relative">
+				<label for="message" class="leading-7 text-sm text-gray-600">Age</label>
+				<input type="number" id="age" name="age" placeholder="Enter Your Age" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+			  </div>
+			</div>
+			<div class="p-2 w-full">
+				<div class="relative">
+				  <label for="message" class="leading-7 text-sm text-gray-600">Height</label>
+				  <input type="number" step=any name="height" placeholder="Enter Height" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+			  </div>
+			  <div class="p-2 w-full">
+				<div class="relative">
+				  <label for="message" class="leading-7 text-sm text-gray-600">Weight</label>
+				  <input type="number" step=any name="weight" placeholder="Enter Weight" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+			  </div>
+			  <div class="p-2 w-full">
+				<div class="relative">
+				  <label for="message" class="leading-7 text-sm text-gray-600">Duration</label>
+				  <input type="number" step=any name="duration" placeholder="Enter Duration" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+			  </div>
+			  <div class="p-2 w-full">
+				<div class="relative">
+				  <label for="message" class="leading-7 text-sm text-gray-600">Heart Rate</label>
+				  <input type="number" step=any name="hr" placeholder="Enter Heart Rate" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+			  </div>
+			  <div class="p-2 w-full">
+				<div class="relative">
+				  <label for="message" class="leading-7 text-sm text-gray-600">Body Temperature</label>
+				  <input type="number" step=any name="temp" placeholder="Enter Body Temp" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+				</div>
+			  </div>
+			  <div class="p-2 w-1/2">
+				<div class="relative">
+				  <label for="name" class="leading-7 text-sm text-gray-600">Select Gender</label>
+				</div>
+					<div>
+					  <div class="form-check">
+						<input class="checked:bg-blue-600 checked:border-blue-600" type="radio" name="r1" value="1" checked>
+						<label class="form-check-label inline-block text-gray-800" for="flexRadioDefault1">
+						  Male
+						</label>
+					  </div>
+					  <div class="form-check">
+						<input class="checked:bg-blue-600 checked:border-blue-600" type="radio" name="r1" value="0">
+						<label class="form-check-label inline-block text-gray-800" for="flexRadioDefault2">
+						  Female
+						</label>
+					  </div>
+					</div>
+				
+			  </div>
+			<div class="p-2 w-full">
+			  <input class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" type="submit" value="Check">
+			</div>
+	 <div class="flex flex-col text-center w-full mb-12">
+		  <p class="font-black text-4xl text-green-600 hover:text-indigo-500 text-center">{{ msg }}</p>
+		</div>
+
+			<div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+			  <a class="text-indigo-500">amaanflask330@gmail.com</a>
+			  <p class="leading-normal my-5">Amaan Shaikh
+				<br>Kalyan,Maharashtra
+			  </p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+	</form>
+</body>
+</html>
+	
