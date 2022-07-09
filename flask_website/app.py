@@ -9,8 +9,8 @@ app.secret_key= "amaanshaikh"
 
 app.config['MAIL_SERVER'] = "smtp.gmail.com"
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = "amaandjango@gmail.com"
-app.config['MAIL_PASSWORD'] = "@django330"
+app.config['MAIL_USERNAME'] = "your_email"
+app.config['MAIL_PASSWORD'] = "your_password"
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
@@ -71,7 +71,7 @@ def resetpassword():
 				sql = "update user set password='%s' where username='%s'"
 				con.execute(sql % (pw,un))
 				con.commit()
-				msg = Message("Welcome to Calories Burnt Predictor ",sender="amaandjango@gmail.com",recipients=[em])
+				msg = Message("Welcome to Calories Burnt Predictor ",sender="your_email",recipients=[em])
 				msg.body="Your password has been reset Successfully. Your new  password is " + pw
 				mail.send(msg)
 				return redirect( url_for('login'))
@@ -99,7 +99,7 @@ def signup():
 			sql = "insert into user values('%s','%s','%s')"
 			con.execute(sql % (un,em,pw))
 			con.commit()
-			msg = Message("Welcome to Calories Burnt Predictor ",sender="amaandjango@gmail.com",recipients=[em])
+			msg = Message("Welcome to Calories Burnt Predictor ",sender="your_email",recipients=[em])
 			msg.body="Congrats u have been Registered. Your password is " + pw
 			mail.send(msg)
 			return redirect( url_for('login'))
